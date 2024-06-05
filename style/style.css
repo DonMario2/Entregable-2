@@ -1,0 +1,39 @@
+body{
+    display: grid;
+    place-items: center;
+    background-color: rgba(0, 0, 0, 0.096);
+}
+
+h1{
+    text-align: center;
+    color: mintcream;
+    margin: 20px 0 20px 0;
+    font: bold 200% sans-serif;
+    background-color: #6d6980;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+table {
+    
+    background-color: #2a1e61; 
+  }
+
+  th, td {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: rgb(219, 214, 214);
+  }
+
+  th {
+    text-align: center;
+  }
+
