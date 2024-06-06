@@ -15,11 +15,11 @@ for (var i = 0; i < 6; i++) {
   for (var j = 0; j < 7; j++) {
     var celda = document.createElement("td");
     fila.appendChild(celda);
-    celda.id = i + "-" + j; // Asignar ID único a cada celda
+    celda.id = i + "-" + j; 
     celda.onclick = function() { 
         colocarFicha(this); 
-    }; // Agregar evento click
-    celdas.push(celda); // Agregar celda al array
+    }; 
+    celdas.push(celda);
     fila.appendChild(celda);
   }
 
@@ -31,9 +31,9 @@ var jugadorRojo = true;
 
 function hovered (){
     const celdasHover = document.querySelectorAll('td');
-celdasHover.forEach(celdasHover => {
+    celdasHover.forEach(celdasHover => {
     celdasHover.addEventListener('mouseover', () => {
-      cambiarColorColumna(celdasHover.cellIndex);
+      cambiarSelectorColumna(celdasHover.cellIndex);
     });
   
     celdasHover.addEventListener('mouseout', () => {
@@ -45,11 +45,11 @@ celdasHover.forEach(celdasHover => {
       });
   });
   
-  function cambiarColorColumna(indiceColumna) {
+  function cambiarSelectorColumna(indiceColumna) {
     const celdasColumna = document.querySelectorAll(`td:nth-child(${indiceColumna + 1})`);
   
     celdasColumna.forEach(celdasHover => {
-        celdasHover.style.backgroundColor = 'rgba(215, 214, 219, 0.2)'; 
+        celdasHover.style.transform = 'scale(0.95)'; 
     });
   }
   
@@ -57,7 +57,7 @@ celdasHover.forEach(celdasHover => {
     const celdasColumna = document.querySelectorAll(`td:nth-child(${indiceColumna + 1})`);
   
     celdasColumna.forEach(celdasHover => {
-        celdasHover.style.backgroundColor = ''; 
+        celdasHover.style.transform = ''; 
     });
   }
 
@@ -68,15 +68,18 @@ celdasHover.forEach(celdasHover => {
       if (!celdasColumna[i].classList.contains('rojo') && !celdasColumna[i].classList.contains('verde')) {
         if (jugadorRojo) {
           celdasColumna[i].classList.add('rojo');
-          document.getElementById('playerTurn').innerHTML = 'Turno del Jugador <span >Verde</span>';
+          document.getElementById('playerTurn').innerHTML = 'Turno del Jugador <span style="color: green">Verde</span>';
         } else {
           celdasColumna[i].classList.add('verde');
-          document.getElementById('playerTurn').innerHTML = 'Turno del Jugador <span>Rojo</span>';
+          document.getElementById('playerTurn').innerHTML = 'Turno del Jugador <span style="color: red">Rojo</span>';
         }
-        jugadorRojo = !jugadorRojo; // Cambiar el turno de los jugadores
+        jugadorRojo = !jugadorRojo; 
         break;
       }
     }
   }
 }
 hovered();
+
+
+//Falta agregar testGanador
