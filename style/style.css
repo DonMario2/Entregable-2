@@ -37,3 +37,11 @@ table {
     text-align: center;
   }
 
+  .verde {
+    background-color: green;
+  }
+
+  .rojo {
+    background-color: red;
+  }
+
